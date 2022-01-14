@@ -12,7 +12,7 @@
   "browser_action": {
     "default_title": "Append Test Text"
   },
-  "web_accessible_resources": ["imgTurtle/idleTurtle2.png"],
+  "web_accessible_resources": ["imgTurtle/*"],
   
   "manifest_version": 2
 }
