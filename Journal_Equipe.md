@@ -24,4 +24,4 @@ Sonia
 
 ## Jour5 
 Sonia / Yaniss / Esther
-- Journée de réflexion sur le comportement de notre turtle, on a réussi ce qu'on s'était fixés, demain c'est l'autoroute. 
+- Journée de réflexion sur le comportement de notre turtle, on a réussi ce qu'on voulait, demain c'est l'autoroute. 
