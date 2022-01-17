@@ -21,4 +21,4 @@ changeColor.addEventListener("click", async () => {
     chrome.storage.sync.get("color", ({ color }) => {
       document.querySelector("h1").style.color = color;
     });
-  };
+  }; 
