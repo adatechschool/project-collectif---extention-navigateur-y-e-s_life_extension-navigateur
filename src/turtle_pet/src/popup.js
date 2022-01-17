@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+let displayTurtle = document.getElementById("display");
+displayTurtle.addEventListener("click", async () => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: setDisplayTurtle,
+  });
+});
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const setDisplayTurtle = () => {
+  alert("cc");
+  let turtleDiv = document.createElement("div");
+  turtleDiv.id = "turtlePet";
+  turtleDiv.style = "z-index: 99999; position: fixed; top: 802px; right: 42px;";
+  let turtleImg = document.createElement("img");
+  turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle2.png");
+  turtleDiv.appendChild(turtleImg);
+  document.body.appendChild(turtleDiv);
+};
