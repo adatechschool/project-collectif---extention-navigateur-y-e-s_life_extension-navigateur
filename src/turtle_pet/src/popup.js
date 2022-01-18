@@ -1,7 +1,4 @@
 let displayTurtle = document.getElementById("display");
-let date = new Date();
-let minutes = date.getMinutes();
-let randomNumber = Math.floor(Math.random() * 6);
 displayTurtle.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   chrome.scripting.executeScript({
@@ -19,41 +16,78 @@ const setDisplayTurtle = () => {
   turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle2.png");
   turtleDiv.appendChild(turtleImg);
   document.body.appendChild(turtleDiv);
-  function hungryTurtle() {
-    let getHungry = 4
-    if (getHungry === 4) {
-      getHungry = 0
-      return true
-    }
-    else {
-      if (minutes === 0 && randomNumber === 1) {
-        getHungry = 0
-        return true
-      }
-      else {
-        getHungry++
-      }
-    }
-  }
-console.log(hungryTurtle());
-};
+  let date = new Date();
+  let minutes = date.getMinutes();
+  let hours = date.getHours();
+  let randomNumber = Math.floor(Math.random() * 6);
 
-/*function hungryTurtle(name){
-  if(name === "sonia")
-  return 2
-  console.log(hungryTurtle("sonia"));
-  let getHungry = 4
-  if (getHungry === 4) {
-    getHungry = 0
+  function isTurtlePooped() {
+  let wantToPoop = 0
+  if ( wantToPoop === 2) {
+    fiesta = 0
     return true
   }
   else {
-    if (minutes === 0 && randomNumber === 1) {
-      getHungry = 0
+    if (minutes === 15){
+      wantToPoop = 0
       return true
     }
     else {
-      getHungry++
+      wantToPoop++
+      return false
     }
   }
-}*/
+
+
+};
+console.log(isTurtlePooped());
+}
+// function hungryTurtle() {
+//   let getHungry = 0
+//   if (getHungry === 4) {
+//     getHungry = 0
+//     return true
+//   }
+//   else {
+//     if (minutes === 49) {
+//       getHungry = 0
+//       return true
+//     }
+//     else {
+//       getHungry++
+//       return false
+//     }
+//   }
+// }
+
+
+
+// function isSleepyTurtle() {
+//   //let sleepy = 0
+//   if (hours === 0) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// function partyTurtle() {
+//   let fiesta = 0
+//   if (fiesta === 2) {
+//     fiesta = 0
+//     return true
+//   }
+//   else {
+//     if (minutes === 30){
+//       fiesta = 0
+//       return true
+//     }
+//     else {
+//       fiesta++
+//       console.log(fiesta)
+//       return false
+//     }
+//   }
+
+
+// };
