@@ -21,25 +21,7 @@ const setDisplayTurtle = () => {
   let hours = date.getHours();
   let randomNumber = Math.floor(Math.random() * 6);
 
-  function isTurtlePooped() {
-  let wantToPoop = 0
-  if ( wantToPoop === 2) {
-    fiesta = 0
-    return true
-  }
-  else {
-    if (minutes === 15){
-      wantToPoop = 0
-      return true
-    }
-    else {
-      wantToPoop++
-      return false
-    }
-  }
 
-
-};
 console.log(isTurtlePooped());
 }
 // function hungryTurtle() {
@@ -88,6 +70,22 @@ console.log(isTurtlePooped());
 //       return false
 //     }
 //   }
+// };
 
-
+// function isTurtlePooped() {
+//   let wantToPoop = 0
+//   if ( wantToPoop === 2) {
+//     fiesta = 0
+//     return true
+//   }
+//   else {
+//     if (minutes === 15){
+//       wantToPoop = 0
+//       return true
+//     }
+//     else {
+//       wantToPoop++
+//       return false
+//     }
+//   }
 // };
