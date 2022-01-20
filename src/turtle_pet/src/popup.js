@@ -45,7 +45,7 @@ displaycleanBehind.addEventListener("click", async () => {
 
 // Display turtle on the html with div
 const setDisplayTurtle = () => {
-  alert("cc");
+  alert("Coucou je m'appelle Catalina");
   let turtleDiv = document.createElement("div");
   turtleDiv.id = "turtlePet";
   turtleDiv.style = "z-index: 99999; position: fixed; top: 802px; right: 42px;";
@@ -165,24 +165,24 @@ function setplayWith() {
   let result = parseInt(prompt (randomNumberOne + "+" + randomNumberTwo + "="));
     if (result === (randomNumberOne + randomNumberTwo)){ 
       turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png"); 
-      alert("t'es la/le boss des calculs")
+      alert("T'es la/le boss des calculs")
     } 
     else {
-      result = prompt ("try again !" + randomNumberOne + "+" + randomNumberTwo + "=");
+      result = prompt ("Try again !" + randomNumberOne + "+" + randomNumberTwo + "=");
     }
 };
 
 // Display giveFood
 function setgiveFood() {
   let turtleImg = document.getElementById("turtleImg");
-  alert('merci pour la fraise *yummy*')
+  alert('Merci pour la fraise *yummy*')
   turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png");
 };
 
 // Display cleanBehind
 function setcleanBehind() {
   let turtleImg = document.getElementById("turtleImg");
-  alert('merci pour ton aide')
+  alert('Merci pour ton aide')
   turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png");
 };
 

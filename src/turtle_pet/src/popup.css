@@ -1,22 +1,27 @@
 body {
   margin: 50px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #ccd5ae;
-  
+}
+
+h1 {
+  color: black;
+  text-align: center;
 }
 
 .buttonChange > button{
   margin: 20px;
-  background-color: #dda15e ;
+  background-color: #5b9510 ;
   color: #fefae0;
   border-radius: 20% ;
   text-decoration: none;
-  width: 7em;
-  height: 5em;
+  width: 6em;
+  height: 4em;
+  font-size: 1.5em;
 }
 
 code {
