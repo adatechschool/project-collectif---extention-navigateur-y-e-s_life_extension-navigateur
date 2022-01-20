@@ -75,7 +75,7 @@ const setDisplayTurtle = () => {
     updateTurtle();
   }
 
-  // let randomNumber = Math.floor(Math.random() * 6);
+  // let randomNumber = Math.floor(Math.random() * 6); => V2
 
   //All turtle's behaviors functions
 
@@ -185,13 +185,3 @@ function setcleanBehind() {
   alert('Merci pour ton aide')
   turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png");
 };
-
-
-/*let displayplayWith = document.getElementById("playWith");
-  alert("click sur moi la");
-  let clicks = 0; // counter
-  displayplayWith.addEventListener("click", function(e) {
-    e.preventDefault()
-    clicks++
-  });
-setTimeout(alert("Tu as cliqué" + clicks + "X !"), 20000)*/
