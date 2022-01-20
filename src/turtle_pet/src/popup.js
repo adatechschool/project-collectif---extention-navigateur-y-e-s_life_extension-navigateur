@@ -1,6 +1,7 @@
 let displayTurtle = document.getElementById("display");
 let displayplayWith = document.getElementById("playWith");
-
+let displaygiveFood = document.getElementById("giveFood");
+let displaycleanBehind = document.getElementById("cleanBehind");
 
 //Execute script when clicked on popup's extension button "Joue avec moi"
 displayplayWith.addEventListener("click", async () => {
@@ -20,7 +21,23 @@ displayTurtle.addEventListener("click", async () => {
   });
 });
 
+//Execute script when clicked on popup's extension button "Donne moi à manger"
+displaygiveFood.addEventListener("click", async () => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: setgiveFood,
+  });
+});
 
+//Execute script when clicked on popup's extension button "Nettoie derrière moi"
+displaycleanBehind.addEventListener("click", async () => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: setcleanBehind,
+  });
+});
 
 
 
@@ -43,12 +60,7 @@ const setDisplayTurtle = () => {
   let m;
   let s;
 
-  function checkTime(i) {
-    if (i < 10) {
-      i = "0" + i;
-    }
-    return i;
-  }
+
 
   function startTime() {
     // add a zero in front of numbers<10
@@ -56,8 +68,6 @@ const setDisplayTurtle = () => {
     h = today.getHours();
     m = today.getMinutes();
     s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
     t = setTimeout(function () {
       startTime();
     }, 1000);
@@ -65,7 +75,7 @@ const setDisplayTurtle = () => {
     updateTurtle();
   }
 
-  let randomNumber = Math.floor(Math.random() * 6);
+  // let randomNumber = Math.floor(Math.random() * 6);
 
   //All turtle's behaviors functions
 
@@ -75,7 +85,7 @@ const setDisplayTurtle = () => {
       getHungry = 0;
       return true;
     } else {
-      if (m === 37 && s === 0) {
+      if (m === 23 && s === 0) {
         getHungry = 0;
         return true;
       } else {
@@ -109,7 +119,7 @@ const setDisplayTurtle = () => {
       fiesta = 0;
       return true;
     } else {
-      if (m === 27 && (s === 0 || s === 1)) {
+      if (m === 2 && s === 0) {
         wantToPoop = 0;
         return true;
       } else {
@@ -142,7 +152,7 @@ const setDisplayTurtle = () => {
       turtleImg.src = chrome.runtime.getURL("/imgTurtle/sleepingTurtle.png");
     }
   };
-
+  
   startTime();
   console.log(s);
 };
@@ -155,14 +165,26 @@ function setplayWith() {
   let result = parseInt(prompt (randomNumberOne + "+" + randomNumberTwo + "="));
     if (result === (randomNumberOne + randomNumberTwo)){ 
       turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png"); 
-      console.log("good")
+      alert("t'es la/le boss des calculs")
     } 
     else {
       result = prompt ("try again !" + randomNumberOne + "+" + randomNumberTwo + "=");
     }
 };
 
+// Display giveFood
+function setgiveFood() {
+  let turtleImg = document.getElementById("turtleImg");
+  alert('merci pour la fraise *yummy*')
+  turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png");
+};
 
+// Display cleanBehind
+function setcleanBehind() {
+  let turtleImg = document.getElementById("turtleImg");
+  alert('merci pour ton aide')
+  turtleImg.src = chrome.runtime.getURL("/imgTurtle/idleTurtle.png");
+};
 
 
 /*let displayplayWith = document.getElementById("playWith");
